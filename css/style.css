@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,300&family=DM+Sans:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-background: #93ccea;
+    --color-surface: #ffffff;
+    --color-primary: #b3b3ff;
+    --color-accent: #96adf4;
+    --color-text: #1e1e7b;
+    --color-muted: #6b7280;
+    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Fraunces', serif;
+    --text-sm: 17px;
+    --text-base: 20px;
+    --text-lg: 28px;
+    --text-xl: 48px;
+    --text-display: 72px;
+    --space-8: 2rem;
+    --border-radius-md: 6px;
+    --border-color: #1e1e7b;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+    --transition-fast: 0.2s ease;
+    --transition-slow: 0.5s ease;
+}
+
+
+
+[data-theme="dark"] {
+    --color-background: #1e1e7b;
+    --color-surface: #2a2a8f;
+    --color-text: #93ccea;
+    --color-muted: #6b9bb8;
+    --color-primary: #7b7bff;
+    --color-accent: #96adf4;
+}
+
+#theme {
+    background: none;
+    background-color: var(--color-surface);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    text-align: center;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--color-surface);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+header a:hover {
+    color: var(--color-accent);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: var(--space-8);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+article h2 a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+article h2 a:hover {
+    color: var(--color-accent);
+}
+
+footer {
+    background-color: var(--color-primary);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    bottom: 0;
+    left: 0;
+}
+
+footer a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+#timeline {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    padding: 0;
+}
+
+#timeline li {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    padding: 15px 20px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.title {
+    font-weight: bold;
+    font-size: var(--text-base);
+}
+
+.detail {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity var(--transition-fast), max-height var(--transition-fast);
+}
+
+#timeline li:hover .detail {
+    opacity: 1;
+    max-height: 100px;
+}
+
+article {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+    cursor: pointer;
+}
+
+article p {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity var(--transition-fast), max-height 0.4s ease;
+    margin: 0;
+}
+
+article:hover p {
+    opacity: 1;
+    max-height: 500px;
+    margin-top: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 2000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--border-radius-md);
+    border: 2px solid var(--border-color);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+button[type="submit"] {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: var(--text-base);
+}
+
+h1, h2 {
+    font-family: var(--font-display);
+    color: var(--color-text);
+}
+
+.error {
+    color: var(--color-surface);
+    font-size: var(--text-sm);
+}
+
+#filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#filters button {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 2px solid var(--color-accent);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: var(--text-sm);
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+#filters button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+}
+
+#filters button.active {
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+}
+
+#typed {
+    font-size: var(--text-lg);
+}
+
+#typed::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+main a {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
+@keyframes fadeUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(24px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.hero-heading {
+    animation: fadeUp 0.6s both;
+    animation-delay: 0s;
+}
+
+.hero-subtitle {
+    animation: fadeUp 0.6s both;
+    animation-delay: 0.15s;
+}
+
+.hero-cta {
+    animation: fadeUp 0.6s both;
+    animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-heading, .hero-subtitle, .hero-cta {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* prefers-reduced-motion is used for those facing disorders that can trigger shocks upon 
+noticing movement on the screen in the form of animations. This checks whether a user has
+enabled a setting on their device that allows them to view the content immediately and not
+experience shocks/nausea from the sudden movement produced by animations. */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* For tablets and bigger devices*/
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    header a {
+        margin-right: 0;
+    }
+
+    main {
+        margin-top: 140px;
+    }
+
+    #filters {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mobile only */
+@media (max-width: 200px) {
+    h1 {
+        font-size: var(--text-lg);
+    }
+
+    img {
+        width: 100%;
+    }
+    #filters {
+        flex-direction: column;
+        align-items: stretch;
+    } 
+    #timeline .title {
+        font-size: 16px !important;
+    } 
+    body {
+        font-size: 16px !important;
+        text-align: left;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    div p, p {
+        font-size: 16px !important;
+        line-height: 1.5;
+    }
+}
+
+#confirmation {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    margin-top: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    width: 350px;
+    height: auto;
+    align-self: center;
+}

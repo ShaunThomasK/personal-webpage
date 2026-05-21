@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Projects</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html"> Home </a>
+                <a href="about.html"> About </a>
+                <a href="projects.html"> Projects </a>
+                <a href="contact.html"> Contact </a>
+            </nav>
+            <nav>
+                <button id="theme" aria-label="Dark Mode">🌙</button>
+            </nav>
+        </header>
+        <main>
+            <h1>Hey! Glad that you're here :D</h1>
+            <p>Feel free to take a look at some of the projects I've made, I've provided the Github links for each alongside :3</p>
+            <br>
+            <div id="filters"></div>
+            <article data-tags="python,mysql">
+                <h2>
+                    <a href="https://github.com/ShaunThomasK/minigame-console">Minigame Console</a>
+                </h2>
+                <p>My friend and I were tasked with making a project incorporating Python and MySQL, and we wanted to make something memorable that we could use years into the future, hence the idea for a minigame console :P</p>
+                <p>This project allows users to play from a variety of games on a "console" of sorts run on the terminal, with an account creation system implemented with MySQL. The games include the mobile game Snake (made using the turtle module in Python) and an Aviation Simulator Game (made with pygame)</p>
+                <p>Now looking back on it, one of the glaring issues is the fact that each user's info is stored locally on their computer in a database, rather than on a centralized platform. Furthermore, if someone got access to the database, everyone's passwords would be leaked, making the system not secure. There's also no accomodation for a logout option.</p>
+                <p>To remedy these, I would suggest that, rather than connecting to a local database on the user's computer, we connect to a database hosted online such that players can compare scores with each other on different PCs. I would also hash the passwords to provide further security, and provide a logout option in the main menu that links to the login step in the main menu loop.</p>
+            </article>
+            <article data-tags="c++,arduino,iot,thingspeak">
+                <h2>
+                    <a href="https://github.com/ShaunThomasK/smart-water-level-iot-system">Smart Water Level Monitoring System</a>
+                </h2>
+                <p>As part of our Internet of Things course, my team was tasked with making a smart water-monitoring system that regularly checks the level of water in a container, and transmits it to a remote server, where the data is plotted on a graph.</p>
+                <p>One of the main faults was that the system didn't account for when readings weren't being taken, leading to unexpected spikes/drops in the graph. Furthermore, the infrastructure was lacking, and the system was unstable, causing variability in readings that were supposed to be constant.</p>
+                <p>To amend the first issue, we coul hardcode the condition for excess/below threshold readings, so that data that falls in those categories gets filtered out and isn't sent to the server. Also, we could construct supports for the sensors involved so that they could remain stationary during the time of taking the readings.</p>
+            </article>
+            <article data-tags="c++,arduino,iot,bluetooth">
+                <h2>
+                    <a href="https://github.com/ShaunThomasK/smart-study-focus-monitoring-system">Smart Productivity Monitoring System</a>
+                </h2>
+                <p>Another mini-project that my IoT team was tasked with was creating a Smart Productivity System that dims/brightens an LED according to the external light conditions, and signals to the user to focus once a timer is set. This timer is started by the user from the phone, which controls the system that is connected to it via Bluetooth. It also appropriately signals when the timer is up, when Bluetooth connectivity hasn't been established, when a forced stop occured etc.</p>
+                <p>One limitation was that, due to the high lighting environment, the LED wouldn't show a drastic difference in shine when placed in ambient conditions vs when a flashlight was shone on it. Also, specific apps were required to be installed to run the program, rather than allowing for connectivity to a website that would allow for real-time control without the fuss of app installation.</p>
+                <p>One suggestion would be to place the system in a dark environment to begin with, so that the differences in lighting could be clearly observed. Furthermore, HTTP connection could be established to a remote server via ThingSpeak that would allow for easier control over the system, rather than installing an app.</p>
+            </article>
+            <br>
+            <p>If you're interested in looking into the other projects I've made, I've posted them on my Github link <a href="https://github.com/ShaunThomasK">here</a>. Have fun!</p>
+        </main>
+        <footer>
+            <a href="https://www.linkedin.com/in/shaun-thomas-548986357/"> LinkedIn </a>
+            <a href="https://github.com/ShaunThomasK"> Github </a>
+        </footer>
+        <script src="js/main.js"></script>
+        <script src="js/projects.js"></script>
+    </body>
+</html>

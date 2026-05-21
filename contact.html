@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html"> Home </a>
+                <a href="about.html"> About </a>
+                <a href="projects.html"> Projects </a>
+                <a href="contact.html"> Contact </a>
+            </nav>
+            <nav>
+                <button id="theme" aria-label="Dark Mode">🌙</button>
+            </nav>
+        </header>
+        <main>
+            <h1>Drop me a mail, let's connect! :D</h1>
+            <br>
+            <form id="contactform">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <span class="error" id="name-error" hidden></span>
+                <label for="phone">Phone Number (optional)</label>
+                <input type="tel" id="phone" name="phone">
+                <span class="error" id="phone-error" hidden></span>
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email">
+                <span class="error" id="email-error" hidden></span>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="error" id="message-error" hidden></span>
+                <button type="submit">Send</button>
+            </form>
+            <!-- Users can expand input fields by dragging bottom right corner of message box. -->
+            <div id="confirmation" hidden>
+                <h2>Thanks for reaching out! :D</h2>
+                <p>I'll get back to you as soon as I can. Have a great day! :3</p>
+            </div>
+        </main>
+        <footer>
+            <a href="https://www.linkedin.com/in/shaun-thomas-548986357/"> LinkedIn </a>
+            <a href="https://github.com/ShaunThomasK"> Github </a>
+        </footer>
+        <script src="js/main.js"></script>
+        <script src="js/contact.js"></script>
+    </body>
+</html>
